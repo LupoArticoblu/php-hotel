@@ -39,6 +39,12 @@
         ],
 
     ];
+    //logica non funzionante
+    if('parking' == true){
+      $hotel['parking'] = 'SI';
+    }else{
+      $hotel['parking'] = 'NO';
+    }
 
 ?>
 
@@ -66,41 +72,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <?php 
+      foreach($hotels as $hotel){
+        echo '<tr>';
+        echo '<td>' . $hotel['name'] . '</td>';
+        echo '<td>' . $hotel['description'] . '</td>';
+        echo '<td>' . $hotel['parking'] . '</td>';
+        echo '<td>' . $hotel['vote'] . '</td>';
+        echo '<td>' . $hotel['distance_of_center'] . '</td>';
+        echo '</tr>';
+      }
+
+      ?>
     </tbody>
   </table>
 </div>
